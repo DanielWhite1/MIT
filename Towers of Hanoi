@@ -1,0 +1,18 @@
+def printMove (from, to):
+    print('move from ' + str(from) + ' to ' + str(to))
+   
+def towers( n, from, to, spare):
+    """
+    input:  n = number of movable parts
+            from = initial area of parts
+            to = area parts need to end
+            spare = area used for storage of parts
+    output: moves needed to complete Tower of Hanoi
+    """
+    if n == 1:
+        printMove(from, to)
+    else:
+        towers(n-1, from, spare, to)
+        towers(1, from, to, spare)
+        towers(n-1, spare, to, from)
+ 
